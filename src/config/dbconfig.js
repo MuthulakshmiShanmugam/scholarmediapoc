@@ -32,5 +32,3 @@ db.connection((err)=>{
 module.exports = db;
 
 
-  
-  
