@@ -9,6 +9,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const superadmin=require("./src/routes/superadmin.routes");
+const schema=require('./src/routes/schema.routes');
 
 
 //used to post data in json (middleware)
@@ -37,12 +38,14 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // parse requests of content-type - application/json
 app.use(bodyParser.json())
 
-app.use("/api/superadmin",superadmin);
 
 // define a root route
 app.get("/",(req,res)=>{
     res.send("Hai Welcome To Our  APP!");
 });
+
+app.use("/api/superadmin",superadmin);
+app.use("/api/schemas",schema);
 
 
 

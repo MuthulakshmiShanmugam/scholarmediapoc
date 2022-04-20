@@ -10,7 +10,7 @@ const controller=require("../controller/superadmin.controller");
 
 
 router.post('/',controller.module.addCustomer);
-//router.get('/',controller.getCustomer);
+router.get('/',controller.module.getCustomer);
 
 
 

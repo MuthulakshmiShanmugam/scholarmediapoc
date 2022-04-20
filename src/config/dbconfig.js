@@ -3,13 +3,19 @@ const knex = require("knex");
 
 require('dotenv').config();
 
-const db = knex({
-    client: "postgresql",
-    connection: {
-      database: "scholarmedia",
-      user: "postgres",
-      password: "7777",
-    },
+// const db = knex({
+//     client: "postgresql" ,
+//     connection: {
+//       database: "scholarmedia",
+//       user: "postgres",
+//       password: "7777",
+//     },
+    
+//   });
+//server
+  const db = knex({
+    client: "postgresql" ,
+    connection: process.env.DATABASE_URL,
     
   });
 

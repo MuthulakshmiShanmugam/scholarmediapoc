@@ -19,6 +19,28 @@ const addCustomer = async (req, res) => {
     }
 };
 
+const getCustomer = async (req, res) => {
+    try{
+    
+   
+       await knex.from("tenants").select("*").then((rows)=>{
+          
+           res.status(200).json({rows});
+
+           
+       })
+   
+     
+    }
+    catch(err){
+        console.log(err);
+        res.status(401).send(err);
+    }
+};
+
+
+
 exports.module= {
-    addCustomer
+    addCustomer,
+    getCustomer
 }
