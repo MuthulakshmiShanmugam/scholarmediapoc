@@ -1,18 +1,17 @@
 
-//const {Router} =require('express');
+// const {Router} = require('express');
 
 const express = require('express');
 const router = express.Router();
-const controller=require("../controller/superadmin.controller");
+const controller = require("../controller/superadmin.controller");
 
 
-//const router=Router();
+// const router=Router();
 
 
-router.post('/',controller.module.addCustomer);
-//router.get('/',controller.getCustomer);
+router.post('/',controller.addCustomer);
+router.get('/',controller.getCustomer);
 
 
 
-
-module.exports=router;
+module.exports = router;
